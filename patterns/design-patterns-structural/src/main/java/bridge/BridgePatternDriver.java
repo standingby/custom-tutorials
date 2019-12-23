@@ -5,6 +5,7 @@ import bridge.color.Red;
 import bridge.shape.Shape;
 import bridge.shape.Square;
 import bridge.shape.Triangle;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * The official definition for the Bridge design pattern introduced by Gang of Four (GoF) is to
@@ -23,15 +24,17 @@ import bridge.shape.Triangle;
  * When we just want to modify the functionality of a single object of class and leave others
  * unchanged
  */
+
+@Slf4j
 public class BridgePatternDriver {
 
   public static void main(String[] args) {
     //a square with red color
     Shape square = new Square(new Red());
-    System.out.println(square.draw());
+    log.info(square.draw());
 
     //a triangle with blue color
     Shape triangle = new Triangle(new Blue());
-    System.out.println(triangle.draw());
+    log.info(triangle.draw());
   }
 }
